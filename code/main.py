@@ -1,9 +1,12 @@
 # standard packages
 import pygame as pg
 import sys
+import os
 # custom packages
 import gui
 #import numerical as num
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
 pg.init()
 
@@ -16,7 +19,7 @@ link_prev = 'home-screen/'
 font = pg.font.Font('freesansbold.ttf', 32)
 font_small = pg.font.Font('freesansbold.ttf', 20)
 screen_width, screen_height = 1200, 750
-app = {'name':'2-Body Gravity Simulator', 'logo': pg.image.load('data/logo.png')}
+app = {'name':'2-Body Gravity Simulator', 'logo': pg.image.load(os.path.join(script_dir, 'data/logo.png'))}
 
 
 dp = pg.display.set_mode(size=(screen_width, screen_height))
@@ -130,11 +133,11 @@ cbw_supp_gui_events = [pg.KEYDOWN, pg.MOUSEMOTION, pg.MOUSEBUTTONDOWN]
 
 # capsuled data
 
-home_screen = {'link': 'home-screen/', 'caption': '2-Body Gravity Simulator', 'icon': pg.image.load('data/logo.png'), 
-               'bg_img': pg.image.load("data/home-screen-bg.png"), 'graphics_func': hs_graphics_func,
+home_screen = {'link': 'home-screen/', 'caption': '2-Body Gravity Simulator', 'icon': pg.image.load('Two-Body-Problem/code/data/logo.png'), 
+               'bg_img': pg.image.load(os.path.join(script_dir, "data/home-screen-bg.png")), 'graphics_func': hs_graphics_func,
                'nodes': hs_nodes, 'supp_gui_events': hs_supp_gui_events}
 
-simulation_win = {'link': 'home-screen/simulation-win/', 'caption': '2-Body Gravity Simulator', 'icon': pg.image.load('data/logo.png'), 
+simulation_win = {'link': 'home-screen/simulation-win/', 'caption': '2-Body Gravity Simulator', 'icon': pg.image.load('Two-Body-Problem/code/data/logo.png'), 
                'bg_img': pg.image.load("data/simulation-win-bg.png"), 'graphics_func': sw_graphics_func,
                'nodes': sw_nodes, 'supp_gui_events': sw_supp_gui_events}
 

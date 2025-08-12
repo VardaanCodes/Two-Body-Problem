@@ -133,7 +133,7 @@ while running:
             energy=kinetic+potential
             print(f"Relative Energy: {energy:.2f}")
 
-            MAX_TRAIL = 300 
+            MAX_TRAIL = 1500 
             r1s.append(r1)
             r2s.append(r2)
             if len(r1s) > MAX_TRAIL:
